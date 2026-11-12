@@ -5,7 +5,6 @@ import de.raindancer.core.data.loadout.LoadoutStore;
 import de.raindancer.core.data.loadout.Loadouts;
 import de.raindancer.modules.draftworld.DraftWorldSettings;
 import de.raindancer.modules.draftworld.model.Side;
-import de.raindancer.modules.draftworld.rules.StayRule;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 
@@ -65,7 +64,6 @@ public final class DraftWorldService {
     private final Wardrobe wardrobe;
     private final Supplier<DraftWorldSettings> settings;
     private final java.util.concurrent.Executor writer;
-    private final StayRule rule = new StayRule();
     private final java.util.Map<UUID, Sides> known = new java.util.concurrent.ConcurrentHashMap<>();
 
     /**
@@ -151,10 +149,8 @@ public final class DraftWorldService {
         }
         Loadout own = captured.withPlace(from);
         DraftWorldSettings now = settings.get();
-        Loadout draft = sides.draft() != null ? sides.draft() : Loadout.empty(now.firstMode().name());
-        if (!rule.gameModeAllowed(modeOf(draft), now.gameModes())) {
-            draft = inMode(draft, now.firstMode());
-        }
+        Loadout kept = sides.draft() != null ? sides.draft() : Loadout.empty(now.firstMode().name());
+        Loadout draft = modeOf(kept) == now.firstMode() ? kept : inMode(kept, now.firstMode());
         known.put(id, new Sides(true, own, sides.draft()));
         write(id, Side.OWN, own);
         if (!wardrobe.apply(player, draft)) {

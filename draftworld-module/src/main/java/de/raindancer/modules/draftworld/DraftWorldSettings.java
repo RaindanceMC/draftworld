@@ -36,9 +36,9 @@ public record DraftWorldSettings(
         @Key("still")
         boolean still,
 
-        @In("draftworld/inside") @Title("Game mode on a first visit")
-        @Describe("What somebody is in on their very first visit. After that they come back in whatever they left in.")
-        @Key("first-game-mode")
+        @In("draftworld/inside") @Title("Game mode on entering")
+        @Describe("What everybody is put in each time they go in, whatever they left in last time.")
+        @Key("entry-game-mode")
         String firstGameMode,
 
         @In("draftworld/inside") @Title("Game modes allowed inside")

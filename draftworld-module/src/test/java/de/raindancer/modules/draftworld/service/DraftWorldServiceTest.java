@@ -143,6 +143,17 @@ class DraftWorldServiceTest {
     }
 
     @Test
+    void everyVisitStartsInCreativeEvenAfterLeavingInSpectator() {
+        service.takeIn(player, AT_HOME);
+        wardrobe.wearing.put(id, carrying("creative_stack", "SPECTATOR"));
+        service.bringOut(player, AT_THE_BUILD);
+
+        service.takeIn(player, AT_HOME);
+        assertThat(wardrobe.wearing.get(id).gameMode()).isEqualTo("CREATIVE");
+        assertThat(wearing()).isEqualTo("creative_stack");
+    }
+
+    @Test
     void aDraftSideInAGameModeNoLongerAllowedComesBackCreative() {
         service.takeIn(player, AT_HOME);
         wardrobe.wearing.put(id, carrying("creative_stack", "SURVIVAL"));

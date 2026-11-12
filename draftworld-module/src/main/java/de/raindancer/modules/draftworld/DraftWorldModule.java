@@ -27,7 +27,7 @@ import java.util.Optional;
  */
 public final class DraftWorldModule implements FlexModule {
 
-    private static final ModuleInfo INFO = ModuleInfo.of("draftworld", "Draft World", "0.1.0")
+    private static final ModuleInfo INFO = ModuleInfo.of("draftworld", "Draft World", "0.1.1")
             .describedAs("A separate world for builders with its own inventory: /draftworld in and back out")
             .by("Raindancer118");
 

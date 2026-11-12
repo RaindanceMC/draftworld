@@ -90,7 +90,13 @@ public final class DraftWorldListener implements Listener {
     /** Whatever slipped past a teleport — a respawn, a plugin moving people without an event — is put right here. */
     @EventHandler(priority = EventPriority.MONITOR)
     public void changedWorld(PlayerChangedWorldEvent event) {
-        trips.settle(event.getPlayer());
+        Player player = event.getPlayer();
+        trips.settle(player);
+        // Whatever else set a game mode on the way in (a plugin, a world default), inside it is the entry one.
+        if (trips.isDraftWorld(player.getWorld())
+                && !stay.gameModeAllowed(player.getGameMode(), settings.get().gameModes())) {
+            player.setGameMode(settings.get().firstMode());
+        }
     }
 
     /** Their sides are read here, on the login thread, so nothing waits for the database inside a tick. */

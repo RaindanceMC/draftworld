@@ -21,7 +21,7 @@ sections:
     title: Your things
     permission: rainsdraftworld.use
     text: |
-      Going in puts your inventory, ender chest, experience, health and game mode away and gives you the draft world's own — empty the first time, in {setting:draftworld:first-game-mode} mode. Coming out puts yours back and keeps the draft world's for next time.
+      Going in puts your inventory, ender chest, experience, health and game mode away and gives you the draft world's own — empty the first time — and you are always put in {setting:draftworld:entry-game-mode} mode. Coming out puts yours back and keeps the draft world's for next time.
       It is the same whichever way you leave — {cmd:/spawn}, a home, a warp: you always arrive outside as yourself. Nothing you made in creative comes out with you.
   - question: Can I copy builds between the worlds?
     title: WorldEdit and schematics
@@ -43,6 +43,6 @@ sections:
     text: |
       {run:/settings} has the pages "Draft world" and "Inside the draft world". Today:
       World — {setting:draftworld:world}, made as {setting:draftworld:terrain}; kept still — {setting:draftworld:still|onoff}.
-      First visit — {setting:draftworld:first-game-mode}; game modes inside — {setting:draftworld:game-modes}.
+      Game mode on entering — {setting:draftworld:entry-game-mode}; game modes inside — {setting:draftworld:game-modes}.
       Commands inside — {setting:draftworld:commands}; and every command of {setting:draftworld:command-plugins}.
       Give the builder rank <white>rainsdraftworld.use</white>; <white>rainsdraftworld.anycommand</white> lifts the command list.
