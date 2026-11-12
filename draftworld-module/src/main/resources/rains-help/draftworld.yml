@@ -1,0 +1,48 @@
+id: draftworld
+title: Draft world
+summary: A separate creative world for builders, with its own inventory — /draftworld in and back out.
+intro: |
+  Builders plan and try things in a world of their own before anything goes onto the server. Going in puts your own things away; coming out gives them back, exactly as you left them.
+icon: SCAFFOLDING
+category: Getting around
+order: 85
+module: draftworld
+aliases: [draftworld, buildworld, draft, build-world, creative-world]
+keywords: [draft, build, builder, creative, worldedit, schematic, copy, paste, plan]
+commands: [draftworld]
+sections:
+  - question: What is the draft world?
+    title: What it is
+    permission: rainsdraftworld.use
+    text: |
+      A world of its own called {setting:draftworld:world}, only for builders. {if:draftworld:still}It stays still: always midday, no weather, no mobs, nothing grows or burns.{/if}
+      {run:/draftworld} takes you in, and again takes you back to exactly where you were.
+  - question: What happens to my inventory?
+    title: Your things
+    permission: rainsdraftworld.use
+    text: |
+      Going in puts your inventory, ender chest, experience, health and game mode away and gives you the draft world's own — empty the first time, in {setting:draftworld:first-game-mode} mode. Coming out puts yours back and keeps the draft world's for next time.
+      It is the same whichever way you leave — {cmd:/spawn}, a home, a warp: you always arrive outside as yourself. Nothing you made in creative comes out with you.
+  - question: Can I copy builds between the worlds?
+    title: WorldEdit and schematics
+    permission: rainsdraftworld.use
+    text: |
+      Yes. Your WorldEdit clipboard goes with you: {cmd://copy} in one world, {cmd://paste} in the other. Schematics saved with {cmd://schem save} load anywhere on the server. Pasting outside the draft world needs your usual WorldEdit rights there.
+  - question: What does not work inside?
+    title: What stays outside
+    permission: rainsdraftworld.use
+    text: |
+      Only a list of commands works inside, so that no shop, mail or trade carries creative items out: WorldEdit, moving around, game modes ({setting:draftworld:game-modes}), messages and a few more. Admin mode never switches inside, and portals lead nowhere.
+  - question: Who may go in?
+    title: Who gets in
+    text: |
+      Builders only. Everybody else is turned away, however they try — a command, a teleport request or a home.
+  - question: What can staff change here?
+    title: Staff settings
+    permission: rainscore.settings
+    text: |
+      {run:/settings} has the pages "Draft world" and "Inside the draft world". Today:
+      World — {setting:draftworld:world}, made as {setting:draftworld:terrain}; kept still — {setting:draftworld:still|onoff}.
+      First visit — {setting:draftworld:first-game-mode}; game modes inside — {setting:draftworld:game-modes}.
+      Commands inside — {setting:draftworld:commands}; and every command of {setting:draftworld:command-plugins}.
+      Give the builder rank <white>rainsdraftworld.use</white>; <white>rainsdraftworld.anycommand</white> lifts the command list.

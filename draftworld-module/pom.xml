@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.raindancer.modules</groupId>
+        <artifactId>draftworld-build</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>draftworld-module</artifactId>
+    <!-- Own version, independent of the reactor's, published on its own schedule. -->
+    <version>${draftworld-module.version}</version>
+    <packaging>jar</packaging>
+
+    <name>Rain's Flexible Modules — Draft World</name>
+    <description>
+        A world of its own for builders: /draftworld takes them in with a separate inventory and game mode, and back
+        out to where they were. Everybody else is kept out. WorldEdit's clipboard and schematics work across both.
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.raindancer.modules</groupId>
+            <artifactId>modules-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.raindancer.modules</groupId>
+            <artifactId>modules-api</artifactId>
+            <type>test-jar</type>
+            <version>${modules-api.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
