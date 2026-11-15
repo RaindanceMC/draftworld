@@ -25,7 +25,7 @@
         <plugin.name>RainsDraftWorld</plugin.name>
         <!-- 0.1.0: a separate world for builders, its own inventory, /draftworld in and out. -->
         <!-- 0.1.1: always creative on entering, and put back in it if anything else changed it on the way in. -->
-        <plugin.version>0.1.1</plugin.version>
+        <plugin.version>0.1.2</plugin.version>
     </properties>
 
     <dependencies>
