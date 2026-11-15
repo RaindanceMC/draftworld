@@ -32,7 +32,7 @@ public record DraftWorldSettings(
 
         @In("draftworld") @Title("Keep the world still")
         @Describe("Always midday, no weather, no mobs spawning, no fire spreading, nothing growing or decaying, and "
-                + "nothing lost on death — a world that stays exactly as it was built.")
+                + "no items lost on death. The world stays exactly as it was built.")
         @Key("still")
         boolean still,
 

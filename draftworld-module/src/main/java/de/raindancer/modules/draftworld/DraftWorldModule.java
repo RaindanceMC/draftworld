@@ -79,7 +79,7 @@ public final class DraftWorldModule implements FlexModule {
         DraftWorldCommands.ready(new DraftWorldServices(context.core().messages(), trips));
 
         if (world == null) {
-            context.log().warn("Draft world is up without its world — /draftworld says so until it loads.");
+            context.log().warn("Draft world is up without its world. /draftworld says so until it loads.");
         } else {
             context.log().info("Draft world '{}' is ready ({}).", world.getName(),
                     settings.current().still() ? "kept still" : "running normally");

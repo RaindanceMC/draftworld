@@ -1,4 +1,1 @@
-# The serious wording for this module: only the lines that differ from messages.yml.
-draftworld:
-  entered: "<green>Draft world entered. <gray>Your inventory is stored until you leave; <white>/draftworld</white> returns you."
-  left: "<green>Returned, with your own inventory."
+# One tone only: messages.yml already says everything plainly. This file stays empty because the wording contract still expects it.

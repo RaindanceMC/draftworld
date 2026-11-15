@@ -21,7 +21,7 @@ public final class DraftWorldCommands {
         return List.of(ModuleCommand.of("draftworld", "Goes into the draft world, or back to where you were",
                         new DraftWorldCommand(DraftWorldCommands::require))
                 .aliased("buildworld")
-                .taking("(nothing) — in, or back out", "back — back to where you were")
+                .taking("(nothing): in, or back out", "back: back to where you were")
                 .needing(PermissionNodes.USE));
     }
 
