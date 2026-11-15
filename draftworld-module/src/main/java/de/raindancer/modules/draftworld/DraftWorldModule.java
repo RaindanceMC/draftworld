@@ -45,7 +45,6 @@ public final class DraftWorldModule implements FlexModule {
                 DraftWorldSettings.DEFAULTS);
         context.core().messages().defineFrom(DraftWorldModule.class.getResourceAsStream("messages.yml"),
                 context.chat().brand()::chatPrefix);
-        context.core().messages().seriousFrom(DraftWorldModule.class.getResourceAsStream("messages-serious.yml"));
         Server server = context.plugin().getServer();
         PermissionNodes.register(server);
 
