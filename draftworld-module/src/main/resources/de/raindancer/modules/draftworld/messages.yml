@@ -1,7 +1,6 @@
 # This module's wording. Every line can be rewritten in plugins/RainsCore/messages.yml.
 draftworld:
   entered: "<green>Draft world entered. <gray>Your inventory is stored until you leave. <white>/draftworld</white> takes you back."
-  left: "<green>Back where you were, with your own inventory."
   not-allowed: "<red>Only builders can go into the draft world."
   leave-admin-mode-first: "<red>Leave admin mode first (<white>/admin</white>), then go into the draft world."
   no-world: "<red>The draft world <white><world></white> is not loaded."

@@ -86,12 +86,7 @@ public final class DraftWorldTrips {
 
     /** {@code /draftworld} from inside: back to where they were. */
     public void goOut(Player player) {
-        player.teleportAsync(outsideTarget(player.getUniqueId()), PlayerTeleportEvent.TeleportCause.PLUGIN)
-                .thenAccept(arrived -> {
-                    if (arrived) {
-                        messages.send(player, "draftworld.left");
-                    }
-                });
+        player.teleportAsync(outsideTarget(player.getUniqueId()), PlayerTeleportEvent.TeleportCause.PLUGIN);
     }
 
     // ------------------------------------------------------------------------ swaps on any teleport
